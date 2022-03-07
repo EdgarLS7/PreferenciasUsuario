@@ -6,7 +6,7 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Preferencias.init();
+   await Preferencias.init();
 
   runApp(const MyApp());
 }
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routerName    : ( _ ) => const HomeScreen(),
         SettingsScreen.routerName: ( _ ) => const SettingsScreen(),
       }, 
-      theme: ThemeData.light()
+      theme: Preferencias.isDarkmode ? ThemeData.dark() : ThemeData.light()
     );
   }
 }
